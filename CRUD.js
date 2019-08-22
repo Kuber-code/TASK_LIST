@@ -1,9 +1,6 @@
 // przekazywanie textu do htmla
 //document.getElementById("text").innerHTML = "TEKST Z PLIKU JS";
-(function() {
-  let dupsko = 'asd';
-console.log(dupsko)
-})()
+
 
 var taskList = ["10","2","3"];
 
@@ -12,7 +9,7 @@ function viewTasks() {
   for(let i of taskList) {
       html += "<li>"+i+"<button onclick='removeTask("+i+")'>Usun to kurwo</button></li>";
   }
-  // html = "<li>10</li><li>2</li><li>3</li>"
+  // html = "<li>10</li><li>2</li><li>3</liaaa>"
   document.getElementById("list").innerHTML = html;
 }
 
