@@ -3,19 +3,19 @@
 
 var taskList = ["10","2","3"];
 
-
-
 function viewTasks() {
   let html = '';
+  
   for(let i in taskList) {
-      
     const task = taskList[i];
-    html += `
-      <li>
-        ${task}
-        <button onclick='removeTask("${i}")'>Delete this</button>
-        <button onclick='editTask("${i}")'>Edit task with text from box</button>
-      </li>`;
+    //html += `<li>${task}
+    //   <button onclick='removeTask("${i}")'>Delete this</button>
+    //   <button onclick='editTask("${i}")'>Edit task with text from box</button>
+    //   </li>`;
+
+    // to zakomenntowane i to poniżej działa tak samo
+
+    html += "<li>" + task + "<button onclick='removeTask(" + i + ")'>Delete this</button><button onclick='editTask(" + i + ")'>Edit task with text from box</button></li>";
   }
   // html = "<li>10</li><li>2</li><li>3</liaaa>"
   document.getElementById("list").innerHTML = html;
@@ -35,9 +35,10 @@ function addTask() {
   viewTasks();
 }
 function editTask(indexToBeRemoved) {
-  taskList.splice(indexToBeRemoved, 1);
-  taskList.push(document.getElementById("msg").value);
+  taskList.splice(indexToBeRemoved, 1, document.getElementById("msg").value);
+  //taskList.push(document.getElementById("msg").value);
   viewTasks();
+  //document.getElementById("list").innerHTML = html;
 }
 
 
