@@ -14,7 +14,7 @@ function viewTasks() {
       <li>
         ${task}
         <button onclick='removeTask("${i}")'>Delete this</button>
-        <button onclick='editTask("${i}")'>Edit tast with text from box</button>
+        <button onclick='editTask("${i}")'>Edit task with text from box</button>
       </li>`;
   }
   // html = "<li>10</li><li>2</li><li>3</liaaa>"
