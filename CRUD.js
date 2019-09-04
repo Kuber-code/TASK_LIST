@@ -19,7 +19,7 @@ if(localStorage.getItem('localList') === undefined  || localStorage.getItem('loc
     }
     console.log(' wywołanie ' +n+' po przejściu ifa:');
     console.log(taskList);
-    console.log(localStorage);;
+    console.log(localStorage);
     n++;
 
 function viewTasks() {
@@ -45,7 +45,6 @@ function viewTasks() {
   console.log(taskList);
   console.log(localStorage);
   n++;
-  //console.log(localStorage);
 }
 
 function removeTask(indexToBeRemoved) {
