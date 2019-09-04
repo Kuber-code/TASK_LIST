@@ -4,25 +4,23 @@
 //czyszenie localstorage
 //localStorage.clear();
 //var taskList = ['10','2','3'];
+var n=2;
+console.log('pierwsze wywołanie po resecie strony:');
 console.log(taskList);
 console.log(localStorage);
-//if(   localStorage.getItem('localList') == undefined || null|| '')
-if(localStorage.getItem('localList') === undefined || localStorage.getItem('localList') === null || localStorage.getItem('localList') === '')
-  {
-  var taskList = ['10','2','3'];
+//if(localStorage.getItem('localList') === undefined || localStorage.getItem('localList') === null || localStorage.getItem('localList') === '')
+if(localStorage.getItem('localList') === undefined  || localStorage.getItem('localList') === null)
+{
+  var taskList = ['10','20','30'];
   }
     else
     {
     var taskList = localStorage.getItem('localList');
     }
-
-console.log(taskList);
-console.log(localStorage);
-
-
-//localStorage.setItem('locatList', JSON.stringify(taskList));
-
-////var taskList = localStorage.getItem('localList');
+    console.log(' wywołanie ' +n+' po przejściu ifa:');
+    console.log(taskList);
+    console.log(localStorage);;
+    n++;
 
 function viewTasks() {
   let html = '';
@@ -39,10 +37,14 @@ function viewTasks() {
     //html += "<li>" + task + "<button onclick='removeTask(" + i + ")'>Delete this</button><button onclick='editTask(" + i + ")'>Edit task with text from box</button></li>";
   }
   document.getElementById('list').innerHTML = html;
+
   //zapisywanie listy do localstore
   localStorage.setItem('locatList', JSON.stringify(taskList));
+  
+  console.log(' wywołanie' +n+'po pętli for:');
   console.log(taskList);
   console.log(localStorage);
+  n++;
   //console.log(localStorage);
 }
 
