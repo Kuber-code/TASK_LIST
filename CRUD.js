@@ -1,30 +1,55 @@
 // przekazywanie textu do htmla
 //document.getElementById("text").innerHTML = "TEKST Z PLIKU JS";
 
-var taskList = ["10","2","3"];
+//czyszenie localstorage
+//localStorage.clear();
+//var taskList = ['10','2','3'];
+console.log(taskList);
+console.log(localStorage);
+//if(   localStorage.getItem('localList') == undefined || null|| '')
+if(localStorage.getItem('localList') === undefined || localStorage.getItem('localList') === null || localStorage.getItem('localList') === '')
+  {
+  var taskList = ['10','2','3'];
+  }
+    else
+    {
+    var taskList = localStorage.getItem('localList');
+    }
+
+console.log(taskList);
+console.log(localStorage);
+
+
+//localStorage.setItem('locatList', JSON.stringify(taskList));
+
+////var taskList = localStorage.getItem('localList');
 
 function viewTasks() {
   let html = '';
-  
+
   for(let i in taskList) {
     const task = taskList[i];
-    //html += `<li>${task}
-    //   <button onclick='removeTask("${i}")'>Delete this</button>
-    //   <button onclick='editTask("${i}")'>Edit task with text from box</button>
-    //   </li>`;
+    html += `<li>${task}
+       <button onclick='removeTask("${i}")'>Delete this</button>
+       <button onclick='editTask("${i}")'>Edit task with text from box</button>
+       </li>`;
 
-    // to zakomenntowane i to poniżej działa tak samo
+    // to zakomentowane i to poniżej działa tak samo
 
-    html += "<li>" + task + "<button onclick='removeTask(" + i + ")'>Delete this</button><button onclick='editTask(" + i + ")'>Edit task with text from box</button></li>";
+    //html += "<li>" + task + "<button onclick='removeTask(" + i + ")'>Delete this</button><button onclick='editTask(" + i + ")'>Edit task with text from box</button></li>";
   }
-  // html = "<li>10</li><li>2</li><li>3</liaaa>"
-  document.getElementById("list").innerHTML = html;
+  document.getElementById('list').innerHTML = html;
+  //zapisywanie listy do localstore
+  localStorage.setItem('locatList', JSON.stringify(taskList));
+  console.log(taskList);
+  console.log(localStorage);
+  //console.log(localStorage);
 }
 
 function removeTask(indexToBeRemoved) {
   taskList.splice(indexToBeRemoved, 1);
-  console.error('Nie usuwaj mnie kurwiu!');
-  console.warn('Śmieciu');
+  //console.error('Nie usuwaj mnie!');
+  //console.warn(':((((');
   viewTasks();
 }
 
@@ -34,11 +59,17 @@ function addTask() {
   taskList.push(userInput);
   viewTasks();
 }
+
 function editTask(indexToBeRemoved) {
   taskList.splice(indexToBeRemoved, 1, document.getElementById("msg").value);
-  //taskList.push(document.getElementById("msg").value);
   viewTasks();
-  //document.getElementById("list").innerHTML = html;
 }
 
 
+//
+//let total = 0, count = 1;
+//while (count <= 10) {
+// total += count;
+//count += 1;}
+//console.log(total);
+//
