@@ -1,0 +1,8 @@
+No to tak:
+- nie musisz w body dodawać wywołania metod, możesz js'a wydzielić totalnie i nie masz pomieszanego htmla z js'em, dodaj sobie id do body i odwołaj się do niego, dodatkowo możesz wywołać główna funkcje w ten sposób:
+document.addEventListener('DOMContentLoaded', fn, false);
+- zamiast for in używaj map(), poczytaj sobie o metodach tablicowych map(), reduce(), filter() itp. Bardzo czesto się je używa
+- wyciągaj do zmiennych elementy z DOMu, document.getElement...
+- Edycja Domu przez innerHtml też jest słaba ale w czystym js'ie ciężko o coś innego, ewentualnie append Child itp
+
+

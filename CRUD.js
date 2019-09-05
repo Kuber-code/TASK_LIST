@@ -12,10 +12,10 @@ console.log(localStorage);
 if(localStorage.getItem('localList') === undefined  || localStorage.getItem('localList') === null)
 {
   var taskList = ['10','20','30'];
-  }
-    else
+  }if(localStorage.getItem('localList') != undefined)
     {
-    var taskList = localStorage.getItem('localList');
+    // przypisanie do taskList zawartości localStorage -  nie działa
+    taskList = localStorage.getItem('localList');
     }
     console.log(' wywołanie ' +n+' po przejściu ifa:');
     console.log(taskList);
@@ -23,7 +23,7 @@ if(localStorage.getItem('localList') === undefined  || localStorage.getItem('loc
     n++;
 
 function viewTasks() {
-  let html = '';
+  var html = '';
 
   for(let i in taskList) {
     const task = taskList[i];
@@ -38,10 +38,10 @@ function viewTasks() {
   }
   document.getElementById('list').innerHTML = html;
 
-  //zapisywanie listy do localstore
-  localStorage.setItem('locatList', JSON.stringify(taskList));
+  //zapisywanie listy do localstore - działa
+  localStorage.setItem('localList', JSON.stringify(taskList));
   
-  console.log(' wywołanie' +n+'po pętli for:');
+  console.log(' wywołanie ' +n+' po pętli for:');
   console.log(taskList);
   console.log(localStorage);
   n++;
@@ -64,6 +64,21 @@ function addTask() {
 function editTask(indexToBeRemoved) {
   taskList.splice(indexToBeRemoved, 1, document.getElementById("msg").value);
   viewTasks();
+}
+
+function resetStorage(){
+  localStorage.clear();
+  viewTasks();
+  console.log(taskList);
+  console.log(localStorage);
+}
+
+function defaultTaskList(){
+  localStorage.clear();
+  var taskList = ['10','20','30'];
+  viewTasks();
+  console.log(taskList);
+  console.log(localStorage);
 }
 
 
