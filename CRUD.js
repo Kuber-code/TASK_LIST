@@ -12,10 +12,13 @@ console.log(localStorage);
 if(localStorage.getItem('localList') === undefined  || localStorage.getItem('localList') === null)
 {
   var taskList = ['10','20','30'];
-  }if(localStorage.getItem('localList') != undefined)
+  }
+    if(localStorage.getItem('localList') != undefined)
     {
     // przypisanie do taskList zawartości localStorage -  nie działa
-    taskList = localStorage.getItem('localList');
+    //obj = localStorage.getItem('localList');
+    var taskList= [(localStorage.getItem('localList'))];
+
     }
     console.log(' wywołanie ' +n+' po przejściu ifa:');
     console.log(taskList);
@@ -74,8 +77,8 @@ function resetStorage(){
 }
 
 function defaultTaskList(){
-  localStorage.clear();
   var taskList = ['10','20','30'];
+  localStorage.clear();
   viewTasks();
   console.log(taskList);
   console.log(localStorage);
