@@ -5,10 +5,12 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "node",
+            "type": "chrome",
             "request": "launch",
-            "name": "Launch Program",
-            "program": "${workspaceFolder}\\CRUD.js"
+            "name": "Launch Chrome",
+            "url": "http://localhost:5500",
+            "webRoot": "${workspaceFolder}"
         }
+
     ]
 }
