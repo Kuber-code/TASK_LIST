@@ -11,15 +11,14 @@
     <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 
-<body onload="viewTasks()">
+<body onload="TaskListApp.view()">
 
     <div id="box">
         <p id="text">
             <input id="msg" type="text" placeholder="Write your task">
         </p>
-        <button onclick="addTask()">Add task</button>
-        <button onclick="resetStorage()">Reset Storage</button>
-        <button onclick="defaultTaskList()">Reset TaskList</button>
+        <button type="button" id="addTaskButton" onclick="TaskListApp.add()">Add task</button>
+        <button type="button" id="clearButton" onclick="TaskListApp.clear()">Reset to default list</button>
         <div id="container">
             <ul id="list">
             </ul>

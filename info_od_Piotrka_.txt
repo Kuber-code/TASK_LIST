@@ -6,3 +6,12 @@ document.addEventListener('DOMContentLoaded', fn, false);
 - Edycja Domu przez innerHtml też jest słaba ale w czystym js'ie ciężko o coś innego, ewentualnie append Child itp
 
 
+document.addEventListener("DOMContentLoaded", function() {
+
+    ...tutaj pobieramy elementy...
+
+});
+
+
+
+onload="TaskListApp.view()"
