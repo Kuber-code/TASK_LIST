@@ -3,7 +3,6 @@
 
 //czyszenie localstorage
 //localStorage.clear();
-
 //document.addEventListener(scriptLoad(), function() {});
 //document.addEventListener("DOMContentLoaded", function() {
 //...tutaj pobieramy elementy...
