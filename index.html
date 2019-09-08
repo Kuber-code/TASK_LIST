@@ -1,36 +1,31 @@
 <!DOCTYPE HTML>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <title>CRUD - Kuber</title>
-    <meta name="description" content="CRUD - Kuber"/>
-    <meta name="keywords" content="crud trening"/>
-    <meta http-equiv="X-UA-Compatibile" content="IE=egde,chrome=1"/>
-    <meta name="author" content="Kuber"/>
+    <meta name="description" content="CRUD - Kuber" />
+    <meta name="keywords" content="crud trening" />
+    <meta http-equiv="X-UA-Compatibile" content="IE=egde,chrome=1" />
+    <meta name="author" content="Kuber" />
 
     <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 
-<body onload="viewTasks()">
+<body id="page" onload="TaskListApp.view()">
 
     <div id="box">
         <p id="text">
             <input id="msg" type="text" placeholder="Write your task">
         </p>
-        <button onclick="addTask()">Add task</button>
-        <button onclick="resetStorage()">Reset Storage</button>
-        <button onclick="defaultTaskList()">Reset TaskList</button>
+        <button type="button" id="addTaskButton" onclick="TaskListApp.add()">Add task</button>
+        <button type="button" id="ClearButton" onclick="TaskListApp.clear()">Reset to default list</button>
         <div id="container">
             <ul id="list">
             </ul>
         </div>
     </div>
-
-
-   
-
-</body> 
+</body>
 <script src="CRUD.js"></script>
+
 </html>
-
-
