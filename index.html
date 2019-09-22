@@ -8,18 +8,18 @@
     <meta name="keywords" content="crud trening" />
     <meta http-equiv="X-UA-Compatibile" content="IE=egde,chrome=1" />
     <meta name="author" content="Kuber" />
-
+    <script src="CRUD.js"></script>
     <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 
-<body onload="TaskListApp.view()">
+<body>
 
     <div id="box">
         <p id="text">
             <input id="msg" type="text" placeholder="Write your task">
         </p>
-        <button type="button" id="addTaskButton" onclick="TaskListApp.add()">Add task</button>
-        <button type="button" id="clearButton" onclick="TaskListApp.clear()">Reset to default list</button>
+        <button type="button" id="addTaskButton">Add task</button>
+        <button type="button" id="clearButton">Reset to default list</button>
         <div id="container">
             <ul id="list">
             </ul>
@@ -27,6 +27,6 @@
     </div>
 
 </body> 
-<script src="CRUD.js"></script>
+
 
 </html>
