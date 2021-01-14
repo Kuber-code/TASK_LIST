@@ -1,3 +1,53 @@
 
 - zamiast for in używaj map(), poczytaj sobie o metodach tablicowych map(), reduce(), filter() itp. 
 Bardzo czesto się je używa
+
+JANUSZ:
+
+82 linia ????????
+Możesz zrobić z tego funkcję będzie jaśniej niż ten komentarz
+Funkcja może przyjmować referencje do inputa i go czyścić
+referencje mozna do consta  
+
+17 i 121 do consta bedzie czytelniej
+
+Tworzenie klawisz wydziel do funkcji
+Linia 48 do 52
+
+Na 20 link napisz co tam jest 
+const ziemniaki = JS9N.parse(doc.value)
+I to dopiero zwracaj
+Czysty kod to taki który się czyta jak prozę
+
+To na 7 link ładnie rozwiązane pierwszy raz tak widzę
+Ja bym raczej odpalał zawsze a nie czekał na event ale spoko
+I albo robisz singleton na 12 lini albo deklarujesz w wartościach jak na 17 lini
+
+Na 9 lini ten if może nie zadziałać zrób
+null != key
+Sprawdzi dla null undefined I chyba jeszcze empty string
+Dodaj .gitignore bo Ci do repo wciągnęło .vscode
+I jak ją pobiore to mi w moim vscode namieszasz
+
+
+OD PIOTRKA:
+- zamień wszystkie var'y na consty, jest różnica w zakresie i występuje tzw. hoisting jeśli używasz var'a
+- let'ów praktycznie się nie używa, jedynie przy pętlach np. for, jeśli gdzieś użyłeś to znaczy, że dało się to zrobić innaczej, lepiej, wiadomo czasami trzeba użyć let'a ale to raczej bardzo rzadko, sam nie pamiętam czy użyłem więcej jak z 5 razy w ciągu ostatniego roku w nowej firmie :)
+- jak nie znasz jeszcze tej stronki to jest to dokumentacja JS'a. Polecam tutaj szukać informacji na wszelkie tematy jak coś działa:) https://developer.mozilla.org/en-US/docs/Web/JavaScript
+- o tutaj masz jak zastąpić tworzenie nowego elementu w taki sposób jak tam zrobiłeś za pomocą let'a
+https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement, podajesz obiekt z opcjami i tyle :)
+- wygląda to lepiej dużo ale ja bym sobie zrobił metodę do tworzenia elementów DOM, robisz to tam kilka razy to może dałoby się to jakoś zrobić, żeby tego nie powtarzać :)
+- w sumie co do kodu to jako, że w JS'ie od ES5 mamy dostępne klasy (xD w końcu) to możesz to spróbować zrobić za pomocą klasy, zrobić klasę, odpowiednie metody i się tym pobawić żeby to poczuć,
+jeśli potem będziesz miał przyjemność zacząć robić coś w React to zoabczysz podobieństwo i będzie Ci łatwiej, a fajnie, żebyś docelowo to przepisał na React'a :) albo inny framework jaki Ci się spodoba
+- mógłbyś zrobić takie coś, tworzysz tablicę obiektów, gdzie jeden obiekt to wszystkie dane potrzebne do wyrenderowania taska i tworzyć listę tasków na podstawie tej tablicy, jak dodajesz nowy obiekt do tablicy to renderuje się lista na nowo, wiem jak to zrobić easy w Reacti'e xD ale w czystym js'ie będzie większe wyzwanie
+
+Co do rozszerzenia to:
+- można by zrobić edycję taska w ten sposób, że jak klikasz edytuj to zamiast nazwy taska pojawia Ci się input wypełniony nazwą taska i tam wpisujesz nową nazwę a obok jakiś button save
+- przydałoby się powoli też ogarniać CSS'y, jeśli planujesz robić we froncie to ni chuja bez tego nie przejdzie, z początku są trudne i nielogiczne ale trzeba je ogarnąć to Ci mogę dać kilka wskazówek gdzie szukać infa: 
+	- dużo fajnych trików jest tutaj https://css-tricks.com/
+	- https://flexboxfroggy.com/#pl gierka do nauki układania elementów, naprawdę sztosik
+	- oczywiście dokumentacja https://developer.mozilla.org/en-US/docs/Web/CSS
+	- https://flukeout.github.io/ kolejna gierka z selektorami, fajnie można podstawy wybierania 	elementów ogarnąć
+- można by spróbować zrobić import i export listy tasków w formacie JSON, myślę że to byłoby spoko
+- mógłbyś dodać czas do kiedy task ma być wykonany, albo kiedy został dodany, coś z czasem się pobawić
+
